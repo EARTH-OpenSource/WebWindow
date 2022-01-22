@@ -1,0 +1,19 @@
+{
+  "name": "webwindow",
+  "version": "1.0.0",
+  "description": "EARTHOS向けウェブアプリケーションウインドウ",
+  "main": "index.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EARTH-OpenSource/WebWindow.git"
+  },
+  "author": "Renorari",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/EARTH-OpenSource/WebWindow/issues"
+  },
+  "homepage": "https://github.com/EARTH-OpenSource/WebWindow#readme"
+}
