@@ -1,0 +1,2 @@
+# WebWindow
+EARTHOS向けウェブアプリケーションウインドウ
