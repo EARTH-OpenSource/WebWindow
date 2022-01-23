@@ -36,8 +36,9 @@
         },
         "linux": {
             "icon": "icon.png",
-            "category": "Utility",
-            "target": "default"
+            "target": {
+                "target": "default"
+            }
         }
     },
     "repository": {
