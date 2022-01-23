@@ -18,7 +18,7 @@
         "win": {
             "icon": "icon.ico",
             "target": {
-                "target": "msi",
+                "target": "default",
                 "arch": [
                     "x64"
                 ]
@@ -37,7 +37,7 @@
         "linux": {
             "icon": "icon.png",
             "target": {
-                "target": "AppImage",
+                "target": "default",
                 "arch": [
                     "x64",
                     "ia32",
