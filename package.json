@@ -1,6 +1,6 @@
 {
     "name": "webwindow",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "EARTHOS向けウェブアプリケーションウインドウ",
     "main": "index.js",
     "scripts": {
