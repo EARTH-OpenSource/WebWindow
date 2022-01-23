@@ -18,10 +18,7 @@
         "win": {
             "icon": "icon.ico",
             "target": {
-                "target": [
-                    "msi",
-                    "appx"
-                ],
+                "target": "msi",
                 "arch": [
                     "x64",
                     "arm64"
