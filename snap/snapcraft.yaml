@@ -1,7 +1,7 @@
 name: "webwindow"
 title: "webwindow"
 base: core18
-version: "1.0.1"
+version: "1.0.2"
 issues: "https://github.com/EARTH-OpenSource/WebWindow/issues"
 source-code: "https://github.com/EARTH-OpenSource/WebWindow.git"
 summary: "EARTHOS向けウェブアプリケーションウインドウ"
