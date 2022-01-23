@@ -15,7 +15,7 @@ grade: stable
 
 apps:
     webwindow:
-        command: $SNAP/app/webwindow --no-sandbox
+        command: $SNAP/webwindow --no-sandbox
         extensions: [gnome-3-28]
         plugs:
             - browser-support
@@ -27,14 +27,14 @@ apps:
 parts:
     webwindow:
         plugin: nil
-        source: app/
+        source: .
         override-build: |
             export ELECTRON_GET_USE_PROXY=1
             export GLOBAL_AGENT_HTTP_PROXY="${http_proxy}"
             export GLOBAL_AGENT_HTTPS_PROXY="${http_proxy}"
             npm i
             npx electron-builder -l --dir
-            cp -rv dist/linux-* $SNAPCRAFT_PART_INSTALL/app
+            cp -rv dist/linux-* $SNAPCRAFT_PART_INSTALL/
         build-snaps:
             - node/16/stable
         build-packages:
