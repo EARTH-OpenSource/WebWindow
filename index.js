@@ -15,7 +15,9 @@ const createWindow = (url = "https://earth.renorari.net/", width = 800, height =
         height: height,
         webPreferences: webPreferences,
         autoHideMenuBar: true,
-        fullscreen: fullscreen
+        fullscreen: fullscreen,
+        icon: "icon.png",
+        title: "WebWindow"
     });
     mainWindow.removeMenu();
     mainWindow.loadURL(url);
