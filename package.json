@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/EARTH-OpenSource/WebWindow/issues"
   },
-  "homepage": "https://github.com/EARTH-OpenSource/WebWindow#readme"
+  "homepage": "https://github.com/EARTH-OpenSource/WebWindow#readme",
+  "devDependencies": {
+    "commander": "^8.3.0",
+    "electron": "^16.0.7"
+  }
 }
