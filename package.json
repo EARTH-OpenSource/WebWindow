@@ -1,23 +1,66 @@
 {
-  "name": "webwindow",
-  "version": "1.0.0",
-  "description": "EARTHOS向けウェブアプリケーションウインドウ",
-  "main": "index.js",
-  "scripts": {
-    "test": "electron ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EARTH-OpenSource/WebWindow.git"
-  },
-  "author": "Renorari",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/EARTH-OpenSource/WebWindow/issues"
-  },
-  "homepage": "https://github.com/EARTH-OpenSource/WebWindow#readme",
-  "devDependencies": {
-    "commander": "^8.3.0",
-    "electron": "^16.0.7"
-  }
+    "name": "webwindow",
+    "version": "1.0.0",
+    "description": "EARTHOS向けウェブアプリケーションウインドウ",
+    "main": "index.js",
+    "scripts": {
+        "test": "electron .",
+        "start": "electron .",
+        "build": "electron-builder"
+    },
+    "build": {
+        "appId": "net.renorari.earth.webwindow",
+        "productName": "WebWindow",
+        "copyright": "(c) 2022 Renorari",
+        "files": [
+            "index.js"
+        ],
+        "win": {
+            "icon": "icon.ico",
+            "target": {
+                "target": "nsis",
+                "arch": [
+                    "x64",
+                    "arm64"
+                ]
+            }
+        },
+        "mac": {
+            "icon": "icon.icns",
+            "target": {
+                "target": "default",
+                "arch": [
+                    "x64",
+                    "arm64"
+                ]
+            }
+        },
+        "linux": {
+            "icon": "icon.png",
+            "target": {
+                "target": "default",
+                "arch": [
+                    "x64",
+                    "ia32",
+                    "arm64",
+                    "armv7l"
+                ]
+            }
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EARTH-OpenSource/WebWindow.git"
+    },
+    "author": "Renorari",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/EARTH-OpenSource/WebWindow/issues"
+    },
+    "homepage": "https://github.com/EARTH-OpenSource/WebWindow#readme",
+    "devDependencies": {
+        "commander": "^8.3.0",
+        "electron": "^16.0.7",
+        "electron-builder": "^22.14.5"
+    }
 }
