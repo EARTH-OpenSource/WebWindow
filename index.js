@@ -1,6 +1,6 @@
-const { app, BrowserWindow, Menu } = require("electron");
+const { app, BrowserWindow } = require("electron");
 const { program } = require("commander");
-program.version("1.0.3", "-v, --version", "バージョンを表示します");
+program.version("1.0.3.1", "-v, --version", "バージョンを表示します");
 program
     .option("-u --url <letter>", "URLをしていします")
     .option("-d --debug", "デバッグを有効にします")
@@ -32,7 +32,6 @@ const createWindow = (url = "https://earth.renorari.net/", width = 800, height =
 app.whenReady().then(() => {
     program.parse(process.argv);
     const options = program.opts();
-
     createWindow(options.url, Number(options.width), Number(options.height), options.title, JSON.stringify(options.webPreferences), options.fullscreen, options.resizable, options.modal, options.debug);
     app.on("activate", () => {
         if (BrowserWindow.getAllWindows().length === 0) createWindow();
