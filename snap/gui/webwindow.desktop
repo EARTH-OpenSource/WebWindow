@@ -7,4 +7,4 @@ Comment=EARTHOS向けウェブアプリケーションウインドウ
 Exec=webwindow
 Icon=${SNAP}/meta/gui/icon.png
 Terminal=false
-Categories=Utility;
+Categories=Utilities;
