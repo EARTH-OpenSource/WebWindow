@@ -36,7 +36,7 @@ parts:
             npx electron-builder -l --dir
             cp -rv dist/linux-* $SNAPCRAFT_PART_INSTALL/
         build-snaps:
-            - node/16/stable
+            - node/15/stable
         build-packages:
             - unzip
         stage-packages:
