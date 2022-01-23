@@ -10,14 +10,14 @@ program
     .option("-f --fullscreen", "ウインドウをフルスクリーンにします")
     .option("-web --webpreferences <letter>", "webPreferencesを設定します");
 
-const createWindow = (url = "https://earth.renorari.net/", width = 800, height = 600 , title = "WebWindow", webPreferences = {}, fullscreen = false, debug = null) => {
+const createWindow = (url = "https://earth.renorari.net/", width = 800, height = 600 , title = "WebWindow", webPreferences = {}, fullscreen = false, debug = false) => {
     const mainWindow = new BrowserWindow({
         width: width,
         height: height,
         webPreferences: webPreferences,
         autoHideMenuBar: true,
         fullscreen: fullscreen,
-        title: title
+        title: title,
     });
     mainWindow.removeMenu();
     mainWindow.loadURL(url);
