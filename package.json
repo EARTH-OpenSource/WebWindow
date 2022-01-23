@@ -20,9 +20,7 @@
             "target": {
                 "target": "msi",
                 "arch": [
-                    "x64",
-                    "x86",
-                    "ia64"
+                    "x64"
                 ]
             }
         },
