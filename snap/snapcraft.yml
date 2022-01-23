@@ -1,0 +1,44 @@
+name: "webwindow"
+title: "webwindow"
+base: core18
+version: "1.0.1"
+issues: "https://github.com/EARTH-OpenSource/WebWindow/issues"
+source-code: "https://github.com/EARTH-OpenSource/WebWindow.git"
+summary: "EARTHOS向けウェブアプリケーションウインドウ"
+description: |
+    __WebWindow__
+    EARTHOS向けウェブアプリケーションウインドウ
+confinement: strict
+icon: "snap/gui/icon.png"
+license: "GPL-3.0"
+grade: stable
+
+apps:
+    webwindow:
+        command: $SNAP/app/webwindow --no-sandbox
+        extensions: [gnome-3-28]
+        plugs:
+            - browser-support
+            - network
+            - network-bind
+        environment:
+            TMPDIR: $XDG_RUNTIME_DIR
+
+parts:
+    webwindow:
+        plugin: nil
+        source: app/
+        override-build: |
+            export ELECTRON_GET_USE_PROXY=1
+            export GLOBAL_AGENT_HTTP_PROXY="${http_proxy}"
+            export GLOBAL_AGENT_HTTPS_PROXY="${http_proxy}"
+            npm i
+            npx electron-builder -l --dir
+            cp -rv dist/linux-* $SNAPCRAFT_PART_INSTALL/app
+        build-snaps:
+            - node/16/stable
+        build-packages:
+            - unzip
+        stage-packages:
+            - libnss3
+            - libnspr4

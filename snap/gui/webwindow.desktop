@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Version=1.0.1
+Name=WebWindow
+Comment=EARTHOS向けウェブアプリケーションウインドウ
+Exec=webwindow
+Icon=${SNAP}/meta/gui/icon.png
+Terminal=false
+Categories=Utility;
