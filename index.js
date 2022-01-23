@@ -1,6 +1,6 @@
 const { app, BrowserWindow, Menu } = require("electron");
 const { program } = require("commander");
-program.version("1.0.2", "-v, --version", "バージョンを表示します");
+program.version("1.0.3", "-v, --version", "バージョンを表示します");
 program
     .option("-u --url <letter>", "URLをしていします")
     .option("-d --debug", "デバッグを有効にします")
@@ -9,9 +9,10 @@ program
     .option("-r --resizable", "ウインドウのリサイズを指定します")
     .option("-t --title <letter>", "ウインドウのタイトルを指定します")
     .option("-f --fullscreen", "ウインドウをフルスクリーンにします")
+    .option("-m --modal", "ウインドウをモーダルにします")
     .option("-web --webpreferences <letter>", "webPreferencesを設定します");
 
-const createWindow = (url = "https://earth.renorari.net/", width = 800, height = 600 , title = "WebWindow", webPreferences = {}, fullscreen = false,resizable = true, debug = false) => {
+const createWindow = (url = "https://earth.renorari.net/", width = 800, height = 600, title = "WebWindow", webPreferences = {}, fullscreen = false, resizable = true, modal = false, debug = false) => {
     const mainWindow = new BrowserWindow({
         width: width,
         height: height,
@@ -19,7 +20,8 @@ const createWindow = (url = "https://earth.renorari.net/", width = 800, height =
         autoHideMenuBar: true,
         fullscreen: fullscreen,
         title: title,
-        resizable: resizable
+        resizable: resizable,
+        modal: modal
     });
     mainWindow.removeMenu();
     mainWindow.loadURL(url);
@@ -31,7 +33,7 @@ app.whenReady().then(() => {
     program.parse(process.argv);
     const options = program.opts();
 
-    createWindow(options.url, Number(options.width), Number(options.height),options.title, JSON.stringify(options.webPreferences), options.fullscreen , options.resizable, options.debug);
+    createWindow(options.url, Number(options.width), Number(options.height), options.title, JSON.stringify(options.webPreferences), options.fullscreen, options.resizable, options.modal, options.debug);
     app.on("activate", () => {
         if (BrowserWindow.getAllWindows().length === 0) createWindow();
     });
